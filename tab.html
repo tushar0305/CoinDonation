@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.modal {
+			background: #fff;
+  			box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  			display: inline-block;
+  			padding: 1em;
+		}
+		@media (min-width: 43.75em) {
+  			.modal {
+    			padding: 1.5em;
+  			}
+		}
+		.modal > label {
+			background: #FFD300;
+  			border: 1px solid #f0c600;
+  			border-radius: .2em;
+			color: #000000;
+			cursor: pointer;
+			display: inline-block;
+			font-weight: bold;
+			padding: 0.75em 1.5em;
+			text-shadow: 1px 1px 1px #fff;
+			transition: all 0.55s;
+		}
+		.modal > label:hover {
+  			transform: scale(0.97);
+		}
+		.modal__overlay {
+		  background: #000000;
+		  bottom: 0;
+		  left: 0;
+		  position: fixed;
+		  right: 0;
+		  text-align: center;
+		  text-shadow: none;
+		  top: 0;
+		  z-index: 600;
+		}
+		.modal__wrap {
+		  padding: 1em 0;
+		  position: relative;
+		  margin: 0 auto;
+		  max-width: 500px;
+		  width: 90%;
+		}
+		@media (min-width: 50em) {
+		  .modal__wrap {
+		    padding: 1.75em;
+		  }
+		}
+		@media (min-height: 37.5em) {
+		  .modal__wrap {
+		    left: 50%;
+		    position: absolute;
+		    top: 50%;
+		    transform: translate(-50%, -80%);
+		  }
+		}
+		.modal__wrap label {
+		  background: #FFD300;
+		  border-radius: 50%;
+		  color: #000000;
+		  cursor: pointer;
+		  display: inline-block;
+		  height: 1.5em;
+		  line-height: 1.5;
+		  position: absolute;
+		  right: .5em;
+		  top: .5em;
+		  width: 1.5em;
+		}
+		.modal__wrap h2 {
+		  color: #FFD300;
+		  margin-bottom: 1em;
+		  text-transform: uppercase;
+		}
+		.modal__wrap p {
+		  color: #FFD300;
+		  text-align: justify;
+		}
+		.modal input:focus ~ label {
+		  transform: scale(0.97);
+		}
+
+		input {
+		  position: absolute;
+		  top: -1000px;
+		}
+
+		.modal__overlay {
+		  opacity: 0;
+		  transform: scale(0.5);
+		  transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		  z-index: -100;
+		}
+
+		input:checked ~ .modal__overlay {
+		  opacity: 1;
+		  transform: scale(1);
+		  z-index: 800;
+		}
+	</style>
+</head>
+<body>
+<div class="model">
+ <div class="modal__overlay" role="dialog" aria-labelledby="modal__title" aria-describedby="modal_desc">
+        <div class="modal__wrap">
+            <label for="modal__trigger">&#10006;</label>
+            <h2 id="modal__title">This is your modal content</h2>
+            <p id="modal__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac laoreet elit. Phasellus dignissim purus vitae urna cursus, quis congue ligula tristique. Ut nec blandit risus. Donec at orci ut justo venenatis viverra. Suspendisse in volutpat lacus. In enim est, dapibus eget ipsum sed, suscipit ultrices diam.</p>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
